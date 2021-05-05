@@ -1,0 +1,30 @@
+{% extends "admin/bars.html.twig" %}
+{% block contenpage %}
+
+<h1>Salut {{ app.user.nomComplet }}</h1>
+{#    <a style="float : right ; background-color: blue ; color: white;#}
+{#  padding: 15px 25px;#}
+{#  text-align: center;#}
+{#  text-decoration: none;#}
+{#  display: inline-block;" href="{{ path('newTopic') }}"><span>Créer Une nouvelle Conversation</span></a>#}
+
+    </br>
+    </br>
+    </br>
+    <div class="w3-container">
+    <h2>Liste de vos anciennes conversations</h2>
+
+    <div class="w3-ul w3-border">
+
+    {% for t in topics|filter(topics => not topics.deleted) | sort|reverse %}
+
+    {% if ( t.author is same  as app.user ) %}
+        <p><h1><a href="{{ path('topic', {'id': t.id}) }}">{{ t.name }}</a><span style="float : right ; font-size: medium ">Creé le {{t.creationDate|date("d/m/Y") }}</span></h1></p>
+{% endif %}
+
+
+
+{% endfor %}
+    </div>
+    </div>
+{% endblock %}

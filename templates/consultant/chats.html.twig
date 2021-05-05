@@ -1,0 +1,67 @@
+{% extends "admin/bars.html.twig" %}
+{% block contenpage %}
+    <h1>Salut {{ app.user.nomComplet }}</h1>
+
+</br>
+</br>
+</br>
+<h2>Liste de vos anciennes conversations</h2>
+
+    </br>
+    </br>
+    </br>
+<div class="w3-container">
+<ul class="w3-ul w3-border">
+
+    {% for t in topics|filter(topics => not topics.deleted) | sort|reverse  %}
+        {% if t.idConsultant is same as app.user %}
+            {% if t.isRead == 0 %}
+                <div style="background-color:lightcoral" >
+                <h1>cv</h1>
+    <li>
+        <span><img class="msg-img" src=" {{ asset('uploads/images/'  ~ t.author.logo) }}" alt="Awesome Image"> <h4>  {{ t.author.nomComplet }}</h4></span>
+        <h4>{{ t.name }}</h4>
+        <a style=" float : right ; background-color: red ; color: white; padding: 15px 25px;text-align: center;text-decoration: none;display: inline-block;" href="{{ path('deleteT', {'id': t.id}) }}">Supprimer</a></span>
+
+
+
+        <a style=" background-color: limegreen ; color: white; padding: 15px 25px;text-align: center;text-decoration: none;display: inline-block;" href="{{ path('topic', {'id': t.id}) }}">Répondre</a>
+    </li>
+
+
+</div>
+        </br>
+        </br>
+        </br>
+
+                {% else %}
+                    <h1>non</h1>
+                    <li>
+                        <span><img class="msg-img" src=" {{ asset('uploads/images/'  ~ t.author.logo) }}" alt="Awesome Image"> <h4>  {{ t.author.nomComplet }}</h4></span>
+                        <h4>{{ t.name }}</h4>
+                        <a style=" float : right ; background-color: red ; color: white; padding: 15px 25px;text-align: center;text-decoration: none;display: inline-block;" href="{{ path('deleteT', {'id': t.id}) }}">Supprimer</a></span>
+
+
+
+                        <a style=" background-color: limegreen ; color: white; padding: 15px 25px;text-align: center;text-decoration: none;display: inline-block;" href="{{ path('topic', {'id': t.id}) }}">Répondre</a>
+                    </li>
+
+
+
+                    </br>
+                    </br>
+                    </br>
+                    {% endif %}
+{% endif %}
+                    {% endfor %}
+
+</ul>
+
+</div>
+
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,219 @@
+{# {% extends "admin/bars.html.twig" %} #}
+
+
+{# {% block contenpage %} #}
+
+{# <div style=" #}
+{# color:orange; #}
+{# font-family: Lobster; #}
+{# " id="video-info-section" class="layer"> #}
+{# <h1 class="text-center infotxt">voir toutes les opportunites offerts par les differentes associations</h1> #}
+
+{# <div class="x_content"> #}
+{# <hr style="  border: 0; #}
+
+{# border-bottom: 3px solid #fff; #}
+{# border-radius: 100%; #}
+{# width: 50%; #}
+{# "></hr> #}
+{# <h2 style="color:#000;" ed class="text-center txt1">Explorez l'univers des Associations en Tunisie</h2> #}
+{# </div> #}
+{# <div style="background-color: white" class=""> #}
+{# <div class="page-title"> #}
+{# <div class="title_left"> #}
+
+{# </div> #}
+{# </div> #}
+
+{# <div class="clearfix"></div> #}
+
+{# <div class="row"> #}
+{# <div class="col-md-12"> #}
+{# <div class="x_panel"> #}
+{# <div class="x_title"> #}
+{# <h2>Toutes les opportunites</h2> #}
+
+{# <ul class="nav navbar-right panel_toolbox"> #}
+{# #}{# #}{# <li><a href="{{ path('newAss',{'idPA':app.user.id}) }}" class="btn btn-success">NEW</a> #}
+{# #}{# #}{# <li><a href="{{ path('association_new') }}" class="btn btn-success">NEW</a> #}
+
+{# </li> #}
+{# </ul> #}
+{# <div class="clearfix"></div> #}
+{# </div> #}
+
+
+
+{# <div class="container blog-page"> #}
+{# <div class="row clearfix"> #}
+
+
+
+
+{# {% for o in opportunites %} #}
+
+{# <figure class="snip0013"> #}
+{# <img width="auto" height="200" #}
+{# src=" {{ asset('uploads/images/'  ~ o.image) }}" alt="sample32"/> #}
+
+{# #}{# <div> #}
+
+{# <a href="{{ path('UserAssoci',{"id":o.id}) }}"><i #}
+{# class=" center-icon"><h4>{{ o.titre }}</h4></i></a> #}
+{# <h2>hi mouna</h2> #}
+{# </div> #}
+{# </figure> #}
+{# {% endfor %} #}
+{# </div> #}
+{# </div> #}
+{# </div> #}
+
+{# </div> #}
+{# </div> #}
+{# </div></div> #}
+{# {% endblock %} #}
+
+
+
+
+{# <!-- Javascript for each modal containing a different pic. This code was written so that you don't have to write multiple modal divs --> #}
+{# {% block javascripts %} #}
+{# <script> #}
+{# $(document).ready(function() { #}
+{# var $lightbox = $('#lightbox'); #}
+{# $('[data-target="#lightbox"]').on('click', function(event) { #}
+{# var $img = $(this).find('img'), #}
+{# src = $img.attr('src'), #}
+{# alt = $img.attr('alt'), #}
+{# css = { #}
+{# 'maxWidth': $(window).width() - 100, #}
+{# 'maxHeight': $(window).height() - 100 #}
+{# }; #}
+{# $lightbox.find('img').attr('src', src); #}
+{# $lightbox.find('img').attr('alt', alt); #}
+{# $lightbox.find('img').css(css); #}
+{# }); #}
+{# $lightbox.on('shown.bs.modal', function (e) { #}
+{# var $img = $lightbox.find('img'); #}
+{# $lightbox.find('.modal-dialog').css({'width': $img.width()}); #}
+{# $lightbox.find('.close').removeClass('hidden'); #}
+{# }); #}
+{# }); #}
+{# </script> #}
+{# {% endblock%} #}
+
+{# <div class="container mt100"> #}
+{# <section class="row"> #}
+{# {% for o in opportunites %} #}
+{# <div class="col-lg-3 col-sm-4 col-xs-6 image-holder"> #}
+
+{# <div class="panel panel-default"> #}
+{# <div class="panel-body"> #}
+
+
+{# <span class=" badge-pill badge-danger">date limite:{{ o.dateLimite|date("d/m/Y")  }}</span> #}
+{# <a href="{{ path('UserOPP',{"id":o.id}) }}" > #}
+
+
+
+{# <img width="auto" height="200" #}
+{# src=" {{ asset('uploads/images/'  ~ o.image) }}" alt="sample32"/> #}
+
+{# <div class="image-title"><h3>{{ o.titre }}</h3></div> #}
+{# <h6>Lancé par : <span> {{ o.association.titre }}</span></h6> #}
+{# <p style="text-align: right">{{ o.typeOffre }}</p> #}
+{# <span class="overlay"><i class="">Voir plus de detail</i></span> #}
+{# </a> #}
+
+
+
+{# </div> #}
+{# </div> #}
+{# </div> #}
+
+
+{# {% endfor %} #}
+
+{# <!-- Modal --> #}
+{# <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"> #}
+{# <div class="modal-dialog"> #}
+{# <div class="modal-content"> #}
+{# <div class="modal-header"> #}
+{# <h1>{{ opp.titre }}</h1> #}
+{# <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> #}
+{# <h4 style="text-align: center" class="modal-title" id="myModalLabel">Hi Modal</h4> #}
+{# </div> #}
+{# <div class="modal-body"> #}
+{# <h1>hii</h1> #}
+{# </div> #}
+{# </div> #}
+{# </div> #}
+{# </div> #}
+
+{# <br/> #}
+
+{# </section> <!-- closing section --> #}
+{# </div> <!-- closing div container --> #}
+{# {% endblock %} #}
+
+
+{% extends "admin/bars.html.twig" %}
+
+{% block contenpage %}
+
+    {% for o in opportunites | filter(opportunites => opportunites.isValid) |sort((a, b) => a.dateLimite <=> b.dateLimite)  %}
+
+        <div style="height: auto;" class="blog-item">
+
+            <div style="height: auto" class="m" href="#">
+
+                <div class="icon">
+                    {# <img src="http://muhammederdem.com.tr/reference/1.jpg" alt=""> #}
+
+                    <img width="auto" height="150"
+                         src=" {{ asset('uploads/images/'  ~ o.image) }}" alt="sample32"/>
+                </div>
+                <div class="content">
+                    <div class="title">{{ o.titre }} <span style="color:red; font-size: 12px" class="blog-date">    <i
+                                    class="fa fa-bell"
+                                    aria-hidden="true"></i>  Date Limite :                  {{ o.dateLimite | date('d/m/Y ') }}
+</span></div>
+                    <div class="rounded"></div>
+
+
+                    <div class="col-sm-9 mb-8">
+                        <div style="width: 400px" class="card h-100">
+                            <div class="card-body">
+
+                                <p class="x_content">
+                                <h2 style=" color:#0c5460; font-family: Lobster;">Lancé par :<a
+                                            href="{{ path('UserAssoci',{"id":o.association.id}) }}"> {{ o.association.titre }}</a>
+                                </h2>
+                                <h2 style=" color:#0c5460; font-family: Lobster;">Domaine concerné
+                                    :{{ o.domaineConcerne }}</h2>
+                                <h2 style=" color:#0c5460; font-family: Lobster;">Region concerné par cette opportunité
+                                    : <i class="fa fa-map-marker "></i> {{ o.region }}</h2>
+
+                                <h2 style=" color:#0c5460; font-family: Lobster;">Type d'offre :{{ o.typeOffre }}</h2>
+                                <h2 style=" color:#0c5460; font-family: Lobster;"> Details : </h2>
+                                <h2 style=" color:lightslategrey; font-family:'Times New Roman';"
+                                    class="d-flex align-items-center mb-3">{{ o.description }}  </h2>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="item-arrow">
+                    <a href="{{ o.lienFormPostul }}">
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"><p style=" font-size:  15px"> Cliquer sur
+                                le fleche pour postuler</p></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

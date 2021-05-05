@@ -1,0 +1,22 @@
+{% extends "admin/bars.html.twig" %}
+{% block title %}nouveau forum{% endblock %}
+
+{% block contenpage %}
+
+
+
+
+
+
+<div class="col-xl-12">
+    <h3 class="page-name">Commencer à chatter avec votre consultant !</h3>
+</div>
+
+<div class="col-md-12" id="pdetails-form">
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}
