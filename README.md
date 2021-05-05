@@ -1,4 +1,6 @@
-<p align="center"><img src="https://symfony.com/images/logos/header-logo.svg"></p>
+<h1>Site Amdouni </h1>
+<h2>Bienvenue !</h2>
+<!-- <p align="center"><img src="https://symfony.com/images/logos/header-logo.svg"></p> -->
 
 # **Symfony 5 backoffice with Gentella Free Bootstrap 4 Admin Dashboard Template**
 
