@@ -32,4 +32,10 @@ class TestController extends AbstractController
     public function indexTest5(){
         return $this->render("publicationsU/allPub.html.twig");
     }
+       /**
+     * @Route("/",name="test10")
+     */
+    public function indexTest10(){
+        return $this->render("test10.html.twig");
+    }
 }
